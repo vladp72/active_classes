@@ -1,0 +1,25 @@
+﻿# CMakeList.txt : CMake project for wprmgr, include source and define
+# project specific logic here.
+#
+
+# Add source to this project's executable.
+add_executable 
+(
+ wprmgr 
+ "wprmgr.cpp"  
+ "ac\actp.h" 
+ "ac\acresourceowner.h" 
+ "ac\acrundown.h" 
+ "ac\acwaitonaddress.h" 
+ "ac\accommon.h" 
+ "ac\ackernelobject.h" 
+ "ac\acfileobject.h"
+ "test/ac_test_thread_pool.h" 
+ "test/ac_test_thread_pool.cpp"
+)
+
+if (CMAKE_VERSION VERSION_GREATER 3.12)
+  set_property(TARGET wprmgr PROPERTY CXX_STANDARD 23)
+endif()
+
+# TODO: Add tests and install targets if needed.
